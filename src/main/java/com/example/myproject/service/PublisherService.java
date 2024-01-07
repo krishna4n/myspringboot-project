@@ -50,10 +50,5 @@ public class PublisherService implements PublisherRepository{
         throw new UnsupportedOperationException("Unimplemented method 'deletePublisher'");
     }
 
-    @Override
-    public Book getPublisherBook(int publisherId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPublisherBook'");
-    }
     
 }

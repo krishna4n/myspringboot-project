@@ -1,0 +1,11 @@
+INSERT INTO book_author(bookId, authorId) VALUES (1, 1);
+INSERT INTO book_author(bookId, authorId) VALUES (2, 2);
+INSERT INTO book_author(bookId, authorId) VALUES (2, 3);
+INSERT INTO book_author(bookId, authorId) VALUES (3, 4);
+INSERT INTO book_author(bookId, authorId) VALUES (3, 5);
+INSERT INTO book_author(bookId, authorId) VALUES (4, 4);
+INSERT INTO book_author(bookId, authorId) VALUES (5, 4);
+INSERT INTO book_author(bookId, authorId) VALUES (5, 5);
+INSERT INTO book_author(bookId, authorId) VALUES (6, 6);
+INSERT INTO book_author(bookId, authorId) VALUES (7, 7);
+INSERT INTO book_author(bookId, authorId) VALUES (8, 6);

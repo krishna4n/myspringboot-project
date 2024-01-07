@@ -52,9 +52,4 @@ public class PublisherController {
         publisherService.deletePublisher(publisherId);
     }
 
-    @GetMapping("/publishers/{publisherId}/book")
-    public Book getPublisherBook(@PathVariable("publisherId") int publisherId){
-        return publisherService.getPublisherBook(publisherId);
-    }
-
 }

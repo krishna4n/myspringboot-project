@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.myproject.model.Book;
+import com.example.myproject.model.Publisher;
 import com.example.myproject.service.BookService;
 
 @RestController
@@ -51,6 +52,10 @@ public class BookController {
         bookService.deleteBook(bookId);
     }
 
+    @GetMapping("/books/{bookId}/publisher")
+    public Publisher getBookPublisher(@PathVariable int bookId){
+        return bookService.getBookPublisher(bookId);
+    }
 
     
 }

@@ -20,6 +20,11 @@ public class Book {
     @Column(name = "imageurl")
     private String imageUrl;
 
+    @ManyToOne
+    @JoinColumn(name = "publisherid")
+    private Publisher publisher;
+    
+
     @ManyToMany
     @JoinTable(name = "book_author",
     joinColumns = @JoinColumn(name = "bookid"),

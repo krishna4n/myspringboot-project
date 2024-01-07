@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.example.myproject.model.Book;
+import com.example.myproject.model.Publisher;
 import com.example.myproject.repository.BookJpaRepository;
 import com.example.myproject.repository.BookRepository;
 
@@ -96,6 +97,12 @@ public class BookService implements BookRepository{
         catch(Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @Override
+    public Publisher getBookPublisher(int bookId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getBookPublisher'");
     }
     
 }

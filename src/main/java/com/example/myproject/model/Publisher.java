@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,18 +20,10 @@ public class Publisher {
     @Column(name = "publishername")
     private String publisherName;
     
-    @ManyToOne
-    @JoinColumn(name = "bookid")
-    private Book book;
-       
-    
-    public Publisher(int publisherId, String publisherName, Book book) {
+    public Publisher(){}
+    public Publisher(int publisherId, String publisherName) {
         this.publisherId = publisherId;
         this.publisherName = publisherName;
-        this.book = book;
-    }
-
-    public Publisher() {
     }
     public int getPublisherId() {
         return publisherId;
@@ -50,13 +40,4 @@ public class Publisher {
     public void setPublisherName(String publisherName) {
         this.publisherName = publisherName;
     }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
 }
