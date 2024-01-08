@@ -2,7 +2,6 @@ package com.example.myproject.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,12 +12,16 @@ import com.example.myproject.model.Book;
 import com.example.myproject.model.Publisher;
 import com.example.myproject.repository.BookJpaRepository;
 import com.example.myproject.repository.BookRepository;
+import com.example.myproject.repository.PublisherJpaRepository;
 
 @Service
 public class BookService implements BookRepository{
 
     @Autowired
     private BookJpaRepository bookJpaRepository;
+
+    @Autowired
+    private PublisherJpaRepository publisherJpaRepository;
 
     @Override
     public ArrayList<Book> getAllBooks() {
@@ -101,8 +104,15 @@ public class BookService implements BookRepository{
 
     @Override
     public Publisher getBookPublisher(int bookId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBookPublisher'");
+        try{
+            Book book = bookJpaRepository.findById(bookId).get();
+            int publisherId = book.getPublisher().getPublisherId();
+            Publisher publisher = publisherJpaRepository.findById(publisherId).get();
+            return publisher;
+        }
+        catch(Exception e){
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
     
 }
